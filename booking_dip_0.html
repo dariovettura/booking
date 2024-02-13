@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<style type="text/css">
+		.errorDate {
+			border: 2px solid #DD1100 !important;
+		}
+		.formBookV5 {
+			display: inline-block;
+		}
+		.formBookV5 span {
+			display: block;
+			margin: 1em;
+			text-align: right;
+		}
+		.formBookV5 span input[type="text"] {
+			padding: 0.3em;
+		}
+	</style>
+</head>
+<body>
+	<form action="https://w1.myalb.it/booking/v5/index.php" method="post" class="formBookV5" id="formBookV5">
+		<input type="hidden" name="hcid" id="hcidV5" value="6b563b2ff17bb40f35764da9c9e3d9f8">
+		<input type="hidden" name="lang" id="langV5" value="it">
+        <input type="hidden" name="view" id="viewV5" value="step1">
+        <input type="hidden" name="id_dip" id="id_dipV5" value="0">
+		<span class="dataInSpanV5">
+            <input type="text" id="dataIn" name="dataIn" class="dateInputV5 ui-widget ui-corner-all" value="" placeholder="Arrivo" readonly/>
+		</span>
+        <span class="dataOutSpanV5">
+			<input type="text" id="dataOut" name="dataOut" class="dateInputV5 ui-widget ui-corner-all" value="" placeholder="Partenza" readonly/>
+		</span>
+        <span class="submitSpanV5">
+			<input type="submit" id="subSearch" value="CERCA" class="submitFormV5 ui-button ui-widget ui-corner-all" />
+		</span>
+	</form>
+	<script>
+		$.noConflict();
+		jQuery( document ).ready(function($) {
+			
+			var lang = $("#langV5").val();
+			
+			if(lang=="it") {
+				var dateFormat = "dd-mm-yy";
+				$('#dataIn').attr("placeholder","Arrivo");
+				$('#dataOut').attr("placeholder","Partenza");
+				$('#subSearch').val("CERCA");
+				$.datepicker.setDefaults({
+					closeText: "Chiudi",
+					prevText: "&#x3C;Prec",
+					nextText: "Succ&#x3E;",
+					currentText: "Oggi",
+					monthNames: [ "Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno",
+						"Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre" ],
+					monthNamesShort: [ "Gen","Feb","Mar","Apr","Mag","Giu",
+						"Lug","Ago","Set","Ott","Nov","Dic" ],
+					dayNames: [ "Domenica","Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato" ],
+					dayNamesShort: [ "Dom","Lun","Mar","Mer","Gio","Ven","Sab" ],
+					dayNamesMin: [ "Do","Lu","Ma","Me","Gi","Ve","Sa" ],
+					weekHeader: "Sm",
+					dateFormat: "dd/mm/yy",
+					firstDay: 1,
+					isRTL: false,
+					showMonthAfterYear: false,
+					yearSuffix: ""
+				});
+			}
+			else {
+				var dateFormat = "yy-mm-dd";
+				$('#dataIn').attr("placeholder","Arrival");
+				$('#dataOut').attr("placeholder","Departure");
+				$('#subSearch').val("SEARCH");
+			}
+				
+			$("#dataIn").datepicker({
+				dateFormat: dateFormat,
+				minDate: 0,
+				onSelect: function() {
+					currentDate = $(this).datepicker("getDate","+1d");
+					if(currentDate) {
+						currentDate.setDate(currentDate.getDate()+1);
+						$("#dataOut").datepicker("setDate",currentDate);
+					}
+				}
+			});
+			
+			$("#dataOut").datepicker({
+				dateFormat: dateFormat,
+				minDate: 0
+			});
+			
+			$(".dateInputV5").focusin(function() {
+				$(".dateInputV5").removeClass("errorDate");
+			});
+			
+			$("#formBookV5").submit(function( event ) {
+				if($("#dataIn").val()=='' || $("#dataOut").val()=='') {
+					$(".dateInputV5").addClass("errorDate");
+					return false;
+				}
+				else {
+					dataInSplit = $("#dataIn").val().split("-");
+					dataOutSplit = $("#dataOut").val().split("-");
+					
+					if(dateFormat=="dd-mm-yy") {
+						valIn = dataInSplit[2]+dataInSplit[1]+dataInSplit[0];
+						valOut = dataOutSplit[2]+dataOutSplit[1]+dataOutSplit[0];
+					}
+					else {
+						valIn = dataInSplit[0]+dataInSplit[1]+dataInSplit[2];
+						valOut = dataOutSplit[0]+dataOutSplit[1]+dataOutSplit[2];
+					}
+					
+					if(valIn>=valOut) {
+						$(".dateInputV5").addClass("errorDate");
+						return false;
+					}
+				}
+			});			
+		});
+	</script>
+</body>
+</html>

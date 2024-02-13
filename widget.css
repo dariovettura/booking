@@ -1,0 +1,466 @@
+/* ------------------- fonts ------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../../atlas-layout/fonts/fontawesome-webfont.eot");
+  src: url("../../atlas-layout/fonts/fontawesome-webfont.eot") format('embedded-opentype'),
+  url("../../atlas-layout/fonts/fontawesome-webfont.woff") format('woff'),
+  url("../../atlas-layout/fonts/fontawesome-webfont.ttf") format('truetype'),
+  url("../../atlas-layout/fonts/fontawesome-webfont.svg#fontawesomeregular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.octobook .fa {
+  font-style:normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.octobook .fa-calendar:before {
+  content: "\f073";
+}
+
+/* ------------------- common styles ------------------- */
+
+#ui-datepicker-div-octorate {
+  z-index:9999 !important;
+}
+
+.octobook {
+  overflow: auto;
+  color: #333;
+  white-space: nowrap;
+}
+
+.octobooktitle {
+  padding: 10px;
+  display: block;
+  border-radius: 0;
+}
+
+.octobook form {
+  padding: 10px;
+  overflow: auto;
+}
+
+.octobookcheckin i,
+.octobookcheckout i {
+  cursor: pointer;
+  display: inline-block;
+  width: 28px;
+  text-align: center;
+  color: #444;
+  line-height: 30px;
+}
+
+.octobookcheckin > div,
+.octobookcheckout > div {
+  overflow: auto;
+}
+
+.octobookcheckin > div > div,
+.octobookcheckout > div > div {
+  border: 1px solid #ccc;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.octobookcheckin input,
+.octobookcheckout input {
+  box-sizing: border-box;
+  width: 100px;
+  text-align: center;
+  border: none;
+  height: 30px;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.octobookcategory > div > select,
+.octobooknetwork > div > select {
+  width: 100%;
+}
+
+.octobookcategory > div > select,
+.octobooknetwork > div > select,
+.octobookpax > div > select,
+.octobookchild > div > select {
+  height: 32px;
+  box-sizing: border-box;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.octobookpax > div > select,
+.octobookchild > div > select {
+  min-width: 60px;
+}
+
+.octobooksubmit > div > input {
+  height: 32px;
+  box-sizing: border-box;
+  width: 130px;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  cursor:pointer;
+}
+
+.ui-datepicker-calendar td.closed a{background:#EF3F61 !important;border: solid 1px #991434;color:#fff !important}
+
+/* ------------------- anchor ------------------- */
+
+.octobookanchorTOPLEFT{position:fixed;top:0;left:1px;}
+.octobookanchorTOPCENTER{position:fixed;top:0;left:50%;transform:translateX(-50%)}
+.octobookanchorTOPRIGHT{position:fixed;top:0;right:1px;}
+.octobookanchorMIDDLELEFT{position:fixed;top:50%;left:1px;transform:translateY(-50%);}
+.octobookanchorMIDDLECENTER{position:fixed;top:50%;left:50%;transform:translate(-50%, -50%)}
+.octobookanchorMIDDLERIGHT{position:fixed;top:50%;right:1px;transform:translateY(-50%);}
+.octobookanchorBOTTOMLEFT{position:fixed;bottom:0;left:1px;}
+.octobookanchorBOTTOMCENTER{position:fixed;bottom:0;left:50%;transform:translateX(-50%)}
+.octobookanchorBOTTOMRIGHT{position:fixed;bottom:0;right:1px;}
+
+/* ------------------- default layout ------------------- */
+
+.octobooklayoutDEFAULT .octobookcheckin,
+.octobooklayoutDEFAULT .octobookcheckout,
+.octobooklayoutDEFAULT .octobookpax,
+.octobooklayoutDEFAULT .octobookchild,
+.octobooklayoutDEFAULT .octobooksubmit {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.octobooklayoutDEFAULT .octobookcategory,
+.octobooklayoutDEFAULT .octobooknetwork,
+.octobooklayoutDEFAULT .octobookcheckin,
+.octobooklayoutDEFAULT .octobookcheckout {
+  padding-bottom: 10px;
+}
+
+.octobooklayoutDEFAULT .octobookcheckin > label,
+.octobooklayoutDEFAULT .octobookcheckout > label,
+.octobooklayoutDEFAULT .octobookpax > label,
+.octobooklayoutDEFAULT .octobookchild > label,
+.octobooklayoutDEFAULT .octobooksubmit > label,
+.octobooklayoutDEFAULT .octobookcheckin > div,
+.octobooklayoutDEFAULT .octobookcheckout > div,
+.octobooklayoutDEFAULT .octobookpax > div,
+.octobooklayoutDEFAULT .octobookchild > div,
+.octobooklayoutDEFAULT .octobooksubmit > div,
+.octobooklayoutDEFAULT .octobookcategory > div,
+.octobooklayoutDEFAULT .octobooknetwork > div {
+  display: block;
+}
+
+/*  ------------------- form layout  ------------------- */
+
+.octobooklayoutFORM > form {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.octobooklayoutFORM .octobookcategory,
+.octobooklayoutFORM .octobooknetwork,
+.octobooklayoutFORM .octobookcheckin,
+.octobooklayoutFORM .octobookcheckout,
+.octobooklayoutFORM .octobookpax,
+.octobooklayoutFORM .octobookchild,
+.octobooklayoutFORM .octobooksubmit {
+  display: table-row;
+}
+
+.octobooklayoutFORM .octobookcategory > label,
+.octobooklayoutFORM .octobooknetwork > label,
+.octobooklayoutFORM .octobookcheckin > label,
+.octobooklayoutFORM .octobookcheckout > label,
+.octobooklayoutFORM .octobookpax > label,
+.octobooklayoutFORM .octobookchild > label,
+.octobooklayoutFORM .octobooksubmit > label,
+.octobooklayoutFORM .octobookcheckin > div,
+.octobooklayoutFORM .octobookcheckout > div,
+.octobooklayoutFORM .octobookpax > div,
+.octobooklayoutFORM .octobookchild > div,
+.octobooklayoutFORM .octobooksubmit > div,
+.octobooklayoutFORM .octobookcategory > div,
+.octobooklayoutFORM .octobooknetwork > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.octobooklayoutFORM .octobookcategory > label,
+.octobooklayoutFORM .octobooknetwork > label,
+.octobooklayoutFORM .octobookcheckin > label,
+.octobooklayoutFORM .octobookcheckout > label,
+.octobooklayoutFORM .octobookpax > label,
+.octobooklayoutFORM .octobookchild > label,
+.octobooklayoutFORM .octobooksubmit > label {
+  width: 30%;
+}
+
+.octobooklayoutFORM .octobookcheckin > label,
+.octobooklayoutFORM .octobookcheckout > label,
+.octobooklayoutFORM .octobookcategory > label,
+.octobooklayoutFORM .octobooknetwork > label,
+.octobooklayoutFORM .octobookpax > label,
+.octobooklayoutFORM .octobookchild > label {
+  padding: 0 10px 10px 0;
+
+}
+
+.octobooklayoutFORM .octobooksubmit > label {
+  padding: 0 10px 0 0;
+}
+
+.octobooklayoutFORM .octobookcheckin > div,
+.octobooklayoutFORM .octobookcheckout > div,
+.octobooklayoutFORM .octobookcategory > div,
+.octobooklayoutFORM .octobooknetwork > div,
+.octobooklayoutFORM .octobookpax > div,
+.octobooklayoutFORM .octobookchild > div {
+  padding-bottom: 10px;
+}
+
+/*  ------------------- vertical layout ------------------- */
+
+.octobooklayoutVERTICAL .octobooktitle,
+.octobooklayoutVERTICAL .octobookcheckin,
+.octobooklayoutVERTICAL .octobookcheckout,
+.octobooklayoutVERTICAL .octobookpax,
+.octobooklayoutVERTICAL .octobookchild,
+.octobooklayoutVERTICAL .octobooksubmit,
+.octobooklayoutVERTICAL .octobooknetwork,
+.octobooklayoutVERTICAL .octobookcategory,
+.octobooklayoutVERTICAL .octobookcategory > label,
+.octobooklayoutVERTICAL .octobooknetwork > label,
+.octobooklayoutVERTICAL .octobookcheckin > label,
+.octobooklayoutVERTICAL .octobookcheckout > label,
+.octobooklayoutVERTICAL .octobookpax > label,
+.octobooklayoutVERTICAL .octobookchild > label,
+.octobooklayoutVERTICAL .octobookcategory > div,
+.octobooklayoutVERTICAL .octobooknetwork > div,
+.octobooklayoutVERTICAL .octobookcheckin > div,
+.octobooklayoutVERTICAL .octobookcheckout > div,
+.octobooklayoutVERTICAL .octobookpax > div,
+.octobooklayoutVERTICAL .octobookchild > div,
+.octobooklayoutVERTICAL .octobooksubmit > div {
+  display: block;
+}
+
+.octobooklayoutVERTICAL .octobooksubmit > label {
+  display: none;
+}
+
+.octobooklayoutVERTICAL .octobookcheckin > div,
+.octobooklayoutVERTICAL .octobookcheckout > div,
+.octobooklayoutVERTICAL .octobooknetwork > div,
+.octobooklayoutVERTICAL .octobookcategory > div,
+.octobooklayoutVERTICAL .octobookpax > div,
+.octobooklayoutVERTICAL .octobookchild > div {
+  padding: 0 0 10px 0;
+}
+
+/*  ------------------- horizontal layout  ------------------- */
+
+.octobooklayoutHORIZONTAL > form {
+  padding-bottom: 0;
+}
+
+.octobooklayoutHORIZONTAL .octobookcategory,
+.octobooklayoutHORIZONTAL .octobooknetwork,
+.octobooklayoutHORIZONTAL .octobookcheckin,
+.octobooklayoutHORIZONTAL .octobookcheckout,
+.octobooklayoutHORIZONTAL .octobookpax,
+.octobooklayoutHORIZONTAL .octobookchild,
+.octobooklayoutHORIZONTAL .octobooksubmit {
+  display: block;
+  float: left;
+  padding-bottom: 10px;
+}
+
+.octobooklayoutHORIZONTAL .octobookcategory,
+.octobooklayoutHORIZONTAL .octobooknetwork,
+.octobooklayoutHORIZONTAL .octobookcheckin,
+.octobooklayoutHORIZONTAL .octobookcheckout,
+.octobooklayoutHORIZONTAL .octobookpax,
+.octobooklayoutHORIZONTAL .octobookchild {
+  padding-right: 10px;
+}
+
+.octobooklayoutHORIZONTAL .octobookcategory > label,
+.octobooklayoutHORIZONTAL .octobooknetwork > label,
+.octobooklayoutHORIZONTAL .octobookcheckin > label,
+.octobooklayoutHORIZONTAL .octobookcheckout > label,
+.octobooklayoutHORIZONTAL .octobookpax > label,
+.octobooklayoutHORIZONTAL .octobookchild > label,
+.octobooklayoutHORIZONTAL .octobooksubmit > label,
+.octobooklayoutHORIZONTAL .octobookcategory > div,
+.octobooklayoutHORIZONTAL .octobooknetwork > div,
+.octobooklayoutHORIZONTAL .octobookcheckin > div,
+.octobooklayoutHORIZONTAL .octobookcheckout > div,
+.octobooklayoutHORIZONTAL .octobookpax > div,
+.octobooklayoutHORIZONTAL .octobookchild > div,
+.octobooklayoutHORIZONTAL .octobooksubmit > div {
+  display: block;
+}
+
+/*  ------------------- inline layout ------------------- */
+
+.octobooklayoutINLINE > form {
+  padding-bottom: 0;
+}
+
+.octobooklayoutINLINE .octobookcategory,
+.octobooklayoutINLINE .octobooknetwork,
+.octobooklayoutINLINE .octobookcheckin,
+.octobooklayoutINLINE .octobookcheckout,
+.octobooklayoutINLINE .octobookpax,
+.octobooklayoutINLINE .octobookchild,
+.octobooklayoutINLINE .octobooksubmit {
+  display: block;
+  float: left;
+  /* vertical-align: middle; */
+  height: 43px;
+}
+
+.octobooklayoutINLINE .octobookcategory > label,
+.octobooklayoutINLINE .octobooknetwork > label,
+.octobooklayoutINLINE .octobookcheckin > label,
+.octobooklayoutINLINE .octobookcheckout > label,
+.octobooklayoutINLINE .octobookpax > label,
+.octobooklayoutINLINE .octobookchild > label,
+.octobooklayoutINLINE .octobooksubmit > label,
+.octobooklayoutINLINE .octobooknetwork > div,
+.octobooklayoutINLINE .octobookcategory > div,
+.octobooklayoutINLINE .octobookcheckin > div,
+.octobooklayoutINLINE .octobookcheckout > div,
+.octobooklayoutINLINE .octobookpax > div,
+.octobooklayoutINLINE .octobookchild > div,
+.octobooklayoutINLINE .octobooksubmit > div {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.octobooklayoutINLINE .octobooknetwork,
+.octobooklayoutINLINE .octobookcategory,
+.octobooklayoutINLINE .octobookcheckin,
+.octobooklayoutINLINE .octobookcheckout,
+.octobooklayoutINLINE .octobookpax,
+.octobooklayoutINLINE .octobookchild {
+  padding-right: 5px;
+}
+
+.octobooklayoutINLINE .octobooksubmit > label {
+  display: none;
+}
+
+/* ---------------- whats on near --------------- */
+
+.octobookWhatsOnNear {
+  position: fixed;
+  top: 50%;
+  transform:translateY(-50%);
+}
+
+.octobookWhatsOnNearLabel {
+  position: fixed;
+  top: 50%;
+  background: #ccc;
+  height:24px;
+  line-height: 24px;
+  padding:0 10px;
+  cursor:pointer;
+  width: 200px;
+}
+
+.octobookWhatsOnNearL {left:0}
+.octobookWhatsOnNearR {right:0}
+.octobookWhatsOnNearL .octobookWhatsOnNearLabel {transform:rotate(90deg);left:-109px;transform-origin:50% bottom}
+.octobookWhatsOnNearR .octobookWhatsOnNearLabel {transform:rotate(-90deg);left:0}
+
+.octobookWhatsOnNear iframe {display:none;margin:0;border:none}
+.octobookWhatsOnNear.octobookWhatsOnNearOpen iframe {display:block;width:617px;height:380px;}
+.octobookWhatsOnNear.octobookWhatsOnNearOpen .octobookWhatsOnNearLabel {left:505px;}
+
+@media (max-width:820px) {
+  .octobooklayoutINLINE {
+      font-size: 12px;
+  }
+}
+
+@media (max-width:560px) {
+  .octobooklayoutHORIZONTAL {
+      font-size: 12px;
+  }
+}
+
+@media (max-width:480px) {
+  .octobook {
+      font-size: 12px;
+  }
+}
+
+@media (max-width:340px) {
+  .octobook > form {
+      padding: 10px !important;
+  }
+
+  .octobook .octobooktitle {
+      display: block !important;
+      float: none !important;
+      width: auto !important;
+  }
+
+  .octobook .octobookcategory,
+  .octobook .octobooknetwork,
+  .octobook .octobookcheckin,
+  .octobook .octobookcheckout,
+  .octobook .octobookpax,
+  .octobook .octobookchild,
+  .octobook .octobooksubmit,
+  .octobook .octobookcategory > label,
+  .octobook .octobooknetwork > label,
+  .octobook .octobookcheckin > label,
+  .octobook .octobookcheckout > label,
+  .octobook .octobookpax > label,
+  .octobook .octobookchild > label,
+  .octobook .octobookcategory > div,
+  .octobook .octobooknetwork > div,
+  .octobook .octobookcheckin > div,
+  .octobook .octobookcheckout > div,
+  .octobook .octobookpax > div,
+  .octobook .octobookchild > div,
+  .octobook .octobooksubmit > div {
+      display: block !important;
+      float: none !important;
+      width: auto !important;
+      padding: 0 !important;
+  }
+
+  .octobook .octobooksubmit > label {
+      display: none !important;
+  }
+
+  .octobook .octobookcheckin > div,
+  .octobook .octobookcheckout > div,
+  .octobook .octobookpax > div,
+  .octobook .octobookchild > div {
+      padding: 0 0 10px 0 !important;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .octobook input {
+      font-size: 16px;
+  }
+}

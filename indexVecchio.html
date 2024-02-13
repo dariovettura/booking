@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+   
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+    rel="stylesheet"
+    href="./widget.css"
+  />
+  <link
+  rel="stylesheet"
+  href="./main.css"
+/>
+<link
+rel="stylesheet"
+href="./formv5.css"
+/>
+    <style type="text/css">
+  
+    </style>
+  </head>
+  <body >
+    <form
+      action="https://w1.myalb.it/booking/v5/index.php"
+      method="post"
+      class="formBookV5 formBookV5anchorBOTTOMCENTER"
+      id="formBookV5"
+    >
+      <input
+        type="hidden"
+        name="hcid"
+        id="hcidV5"
+        value="6b563b2ff17bb40f35764da9c9e3d9f8"
+      />
+      <input type="hidden" name="lang" id="langV5"  
+   
+       value="it" 
+      />
+      <input type="hidden" name="view" id="viewV5" value="step1" />
+      <input type="hidden" name="id_dip" id="id_dipV5" value="0" />
+      <div class="dataInSpanV5">
+        <div>
+        <div>
+        <input
+          type="text"
+          id="dataIn"
+          name="dataIn"
+          class="dateInputV5 ui-widget ui-corner-all"
+          value=""
+          placeholder="Arrivo"
+          readonly
+        />
+        <i class="fa fa-calendar"></i>
+      </div>
+      </div>
+    </div>
+      <div class="dataOutSpanV5">
+        <div>
+        <div>
+        <input
+          type="text"
+          id="dataOut"
+          name="dataOut"
+          class="dateInputV5 ui-widget ui-corner-all"
+          value=""
+          placeholder="Partenza"
+          readonly
+        />
+        <i class="fa fa-calendar"></i>
+      </div>
+    </div>
+  </div>
+      <div class="submitSpanV5">
+        <div>
+        <input
+          type="submit"
+          id="subSearch"
+          value="verifica disponibilità"
+      
+          class="submitFormV5 ui-button ui-widget ui-corner-all"
+        />
+      </div>
+      </div>
+    </form>
+   
+
+    <div
+      class="octobook octobook14556 octobooklayoutHORIZONTAL octobookthemeNONE octobookanchorTOPCENTER"
+    >
+      <form
+        action="https://ssl.webstarhotel.com/booking/v5/index.php"
+        target="_blank"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="hcid"
+          id="hcidV4"
+          value="6b563b2ff17bb40f35764da9c9e3d9f8"
+        />
+        <input
+          type="hidden"
+          name="lang"
+          id="langV4"
+        
+        />
+        <input type="hidden" name="view" id="viewV4" value="step1" />
+        <div class="octobookcheckin">
+          <label>Data di arrivo</label>
+          <div>
+            <div>
+              <input
+                type="text"
+                id="dataIn"
+                name="dataIn"
+                class="dateInputV4 ui-widget ui-corner-all"
+                value=""
+                placeholder="Arrivo"
+                readonly
+              /><i class="fa fa-calendar"></i>
+            </div>
+          </div>
+        </div>
+        <div class="octobookcheckout">
+          <label>Data di partenza</label>
+          <div>
+            <div>
+              <input
+                type="text"
+                id="dataOut"
+                name="dataOut"
+                class="dateInputV4 ui-widget ui-corner-all"
+                value=""
+                placeholder="Partenza"
+                readonly
+              /><i class="fa fa-calendar"></i>
+            </div>
+          </div>
+        </div>
+        <div class="octobooksubmit">
+          <label>&nbsp;</label>
+          <div>
+            <input
+              id="subSearch"
+              type="submit"
+              value="Verifica disponibilità"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <li><a href="https://ssl.webstarhotel.com/booking/v5/index.php?hcid=6b563b2ff17bb40f35764da9c9e3d9f8&lang=it&view=step1" target="_blank"><?php echo PRENOTA_?></a></li>
+    <li><a href="https://w1.myalb.it/booking/v5/index.php" target="_blank"><?php echo PRENOTA_?></a></li>
+    <!-- <script>
+      $( document ).ready(function($) {
+  
+          var lang = $("#langV4").val();
+  
+          if(lang=="it") {
+              var dateFormat = "dd-mm-yy";
+              $('#dataIn').attr("placeholder","Arrivo");
+              $('#dataOut').attr("placeholder","Partenza");
+              $('#subSearch').val("Verifica disponibilità");
+              $.datepicker.setDefaults({
+                  closeText: "Chiudi",
+                  prevText: "&#x3C;Prec",
+                  nextText: "Succ&#x3E;",
+                  currentText: "Oggi",
+                  monthNames: [ "Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno",
+                      "Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre" ],
+                  monthNamesShort: [ "Gen","Feb","Mar","Apr","Mag","Giu",
+                      "Lug","Ago","Set","Ott","Nov","Dic" ],
+                  dayNames: [ "Domenica","Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato" ],
+                  dayNamesShort: [ "Dom","Lun","Mar","Mer","Gio","Ven","Sab" ],
+                  dayNamesMin: [ "Do","Lu","Ma","Me","Gi","Ve","Sa" ],
+                  weekHeader: "Sm",
+                  dateFormat: "dd/mm/yy",
+                  firstDay: 1,
+                  isRTL: false,
+                  showMonthAfterYear: false,
+                  yearSuffix: ""
+              });
+          }
+          else {
+              var dateFormat = "yy-mm-dd";
+              $('#dataIn').attr("placeholder","Arrival");
+              $('#dataOut').attr("placeholder","Departure");
+              $('#subSearch').val("Check availability");
+          }
+  
+          $("#dataIn").datepicker({
+              dateFormat: dateFormat,
+              minDate: 0,
+              onSelect: function() {
+                  currentDate = $(this).datepicker("getDate","+1d");
+                  if(currentDate) {
+                      currentDate.setDate(currentDate.getDate()+1);
+                      $("#dataOut").datepicker("setDate",currentDate);
+                  }
+              }
+          });
+  
+          $("#dataOut").datepicker({
+              dateFormat: dateFormat,
+              minDate: 0
+          });
+  
+          $(".dateInputV4").focusin(function() {
+              $(".dateInputV4").removeClass("errorDate");
+          });
+  
+          $("#formBookV4").submit(function( event ) {
+              if($("#dataIn").val()=='' || $("#dataOut").val()=='') {
+                  $(".dateInputV4").addClass("errorDate");
+                  return false;
+              }
+              else {
+                  dataInSplit = $("#dataIn").val().split("-");
+                  dataOutSplit = $("#dataOut").val().split("-");
+  
+                  if(dateFormat=="dd-mm-yy") {
+                      valIn = dataInSplit[2]+dataInSplit[1]+dataInSplit[0];
+                      valOut = dataOutSplit[2]+dataOutSplit[1]+dataOutSplit[0];
+                  }
+                  else {
+                      valIn = dataInSplit[0]+dataInSplit[1]+dataInSplit[2];
+                      valOut = dataOutSplit[0]+dataOutSplit[1]+dataOutSplit[2];
+                  }
+  
+                  if(valIn>=valOut) {
+                      $(".dateInputV4").addClass("errorDate");
+                      return false;
+                  }
+              }
+          });
+      });
+  </script> -->
+   <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $.noConflict();
+    jQuery(document).ready(function ($) {
+      var lang = $("#langV5").val();
+      if (lang == "it") {
+        var dateFormat = "dd-mm-yy";
+     
+        $.datepicker.setDefaults({
+          closeText: "Chiudi",
+          prevText: "&#x3C;Prec",
+          nextText: "Succ&#x3E;",
+          currentText: "Oggi",
+          monthNames: [
+            "Gennaio",
+            "Febbraio",
+            "Marzo",
+            "Aprile",
+            "Maggio",
+            "Giugno",
+            "Luglio",
+            "Agosto",
+            "Settembre",
+            "Ottobre",
+            "Novembre",
+            "Dicembre",
+          ],
+          monthNamesShort: [
+            "Gen",
+            "Feb",
+            "Mar",
+            "Apr",
+            "Mag",
+            "Giu",
+            "Lug",
+            "Ago",
+            "Set",
+            "Ott",
+            "Nov",
+            "Dic",
+          ],
+          dayNames: [
+            "Domenica",
+            "Lunedì",
+            "Martedì",
+            "Mercoledì",
+            "Giovedì",
+            "Venerdì",
+            "Sabato",
+          ],
+          dayNamesShort: ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+          dayNamesMin: ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa"],
+          weekHeader: "Sm",
+          dateFormat: "dd/mm/yy",
+          firstDay: 1,
+          isRTL: false,
+          showMonthAfterYear: false,
+          yearSuffix: "",
+        });
+      } else {
+        var dateFormat = "yy-mm-dd";
+        $("#dataIn").attr("placeholder", "Arrival");
+        $("#dataOut").attr("placeholder", "Departure");
+        $("#subSearch").val("SEARCH");
+      }
+
+      $("#dataIn").datepicker({
+        dateFormat: dateFormat,
+        minDate: 0,
+        onSelect: function () {
+          currentDate = $(this).datepicker("getDate", "+1d");
+          if (currentDate) {
+            currentDate.setDate(currentDate.getDate() + 1);
+            $("#dataOut").datepicker("setDate", currentDate);
+          }
+        },
+      });
+
+      $("#dataOut").datepicker({
+        dateFormat: dateFormat,
+        minDate: 0,
+      });
+
+      $(".dateInputV5").focusin(function () {
+        $(".dateInputV5").removeClass("errorDate");
+      });
+
+      $("#formBookV5").submit(function (event) {
+        if ($("#dataIn").val() == "" || $("#dataOut").val() == "") {
+          $(".dateInputV5").addClass("errorDate");
+          return false;
+        } else {
+          dataInSplit = $("#dataIn").val().split("-");
+          dataOutSplit = $("#dataOut").val().split("-");
+
+          if (dateFormat == "dd-mm-yy") {
+            valIn = dataInSplit[2] + dataInSplit[1] + dataInSplit[0];
+            valOut = dataOutSplit[2] + dataOutSplit[1] + dataOutSplit[0];
+          } else {
+            valIn = dataInSplit[0] + dataInSplit[1] + dataInSplit[2];
+            valOut = dataOutSplit[0] + dataOutSplit[1] + dataOutSplit[2];
+          }
+
+          if (valIn >= valOut) {
+            $(".dateInputV5").addClass("errorDate");
+            return false;
+          }
+        }
+      });
+    });
+  </script> 
+  </body> 
+</html>
+value="<?php echo ICL_LANGUAGE_CODE; ?>"
